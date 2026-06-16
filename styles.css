@@ -384,34 +384,6 @@ textarea {
   color: var(--muted);
 }
 
-.precheck-section {
-  background: var(--paper);
-}
-
-.precheck-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-}
-
-.precheck-list article {
-  padding: 24px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--white);
-  box-shadow: 0 12px 42px rgba(23, 33, 31, 0.05);
-}
-
-.precheck-list h3 {
-  margin: 0;
-  font-size: 1.08rem;
-}
-
-.precheck-list p {
-  margin: 10px 0 0;
-  color: var(--muted);
-}
-
 .flow-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -623,7 +595,6 @@ textarea {
   }
 
   .notice-grid,
-  .precheck-list,
   .flow-list {
     grid-template-columns: 1fr;
   }
@@ -719,7 +690,6 @@ textarea {
   }
 
   .reason-card,
-  .precheck-list article,
   .flow-list li {
     padding: 22px;
   }
