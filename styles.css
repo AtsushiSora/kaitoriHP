@@ -299,10 +299,6 @@ textarea {
   padding: clamp(72px, 9vw, 112px) 0;
 }
 
-.section-soft {
-  background: #eef4ef;
-}
-
 .section-dark {
   color: var(--white);
   background: var(--charcoal);
@@ -350,7 +346,6 @@ textarea {
 }
 
 .reason-card,
-.price-card,
 .contact-form {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -378,40 +373,15 @@ textarea {
 }
 
 .reason-card h3,
-.price-card h3,
 .flow-list h3 {
   margin: 0;
   font-size: 1.2rem;
 }
 
 .reason-card p,
-.price-card p,
 .flow-list p {
   margin: 10px 0 0;
   color: var(--muted);
-}
-
-.price-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-.price-card {
-  padding: 30px;
-}
-
-.price-card.featured {
-  border-color: rgba(15, 122, 77, 0.34);
-  box-shadow: var(--shadow);
-}
-
-.price {
-  margin: 12px 0 0;
-  color: var(--green-dark);
-  font-size: clamp(1.6rem, 3vw, 2.35rem);
-  font-weight: 900;
-  line-height: 1.18;
 }
 
 .flow-list {
@@ -625,7 +595,6 @@ textarea {
   }
 
   .notice-grid,
-  .price-grid,
   .flow-list {
     grid-template-columns: 1fr;
   }
@@ -711,7 +680,6 @@ textarea {
   }
 
   .reason-card,
-  .price-card,
   .flow-list li {
     padding: 22px;
   }
