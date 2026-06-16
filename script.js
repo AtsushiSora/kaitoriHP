@@ -1,0 +1,47 @@
+const LINE_OFFICIAL_ACCOUNT_ID = "@774zckii";
+
+function getFieldValue(form, fieldName) {
+  const field = form.elements[fieldName];
+  return field ? field.value.trim() : "";
+}
+
+function buildLineMessage(form) {
+  const rows = [
+    "廃車の無料引き取りについて相談したいです。",
+    "",
+    `お名前：${getFieldValue(form, "name") || "未入力"}`,
+    `メールアドレス：${getFieldValue(form, "email") || "未入力"}`,
+    `電話番号：${getFieldValue(form, "phone") || "未入力"}`,
+    `車種：${getFieldValue(form, "car") || "未入力"}`,
+    `年式：${getFieldValue(form, "year") || "未入力"}`,
+    `走行距離：${getFieldValue(form, "mileage") || "未入力"}`,
+    `車の状態：${getFieldValue(form, "condition") || "未入力"}`,
+    `引き取り場所・相談内容：${getFieldValue(form, "message") || "未入力"}`,
+  ];
+
+  return rows.join("\n");
+}
+
+function buildLineUrl(message) {
+  const encodedMessage = encodeURIComponent(message);
+
+  if (LINE_OFFICIAL_ACCOUNT_ID) {
+    return `https://line.me/R/oaMessage/${LINE_OFFICIAL_ACCOUNT_ID}/?${encodedMessage}`;
+  }
+
+  return `https://line.me/R/msg/text/?${encodedMessage}`;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const contactForm = document.querySelector("#contact-form");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      window.location.href = buildLineUrl(buildLineMessage(contactForm));
+    });
+  }
+});
+
+window.buildLineMessage = buildLineMessage;
+window.buildLineUrl = buildLineUrl;

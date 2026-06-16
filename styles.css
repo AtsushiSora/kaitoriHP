@@ -614,8 +614,18 @@ textarea {
     padding: 12px 14px;
   }
 
-  .brand > span:not(.brand-mark) {
+  .brand {
+    gap: 10px;
+    min-width: 0;
+  }
+
+  .brand small {
     display: none;
+  }
+
+  .brand strong {
+    font-size: 0.94rem;
+    white-space: nowrap;
   }
 
   .brand-mark {
