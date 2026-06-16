@@ -183,9 +183,9 @@ textarea {
 }
 
 .hero h1 {
-  max-width: 940px;
+  max-width: 980px;
   margin: 0;
-  font-size: clamp(2.45rem, 6.2vw, 5.2rem);
+  font-size: 4.75rem;
   line-height: 1.08;
   letter-spacing: 0;
 }
@@ -477,21 +477,42 @@ textarea {
   align-items: start;
 }
 
-.contact-callout {
+.contact-methods {
   display: grid;
-  gap: 4px;
+  gap: 12px;
   margin-top: 28px;
-  padding: 22px;
-  border-left: 5px solid var(--amber);
-  background: #fff6df;
 }
 
-.contact-callout strong {
+.method-card {
+  display: grid;
+  gap: 4px;
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 12px 42px rgba(23, 33, 31, 0.06);
+}
+
+.method-card:hover {
+  border-color: rgba(15, 122, 77, 0.38);
+}
+
+.method-card strong {
   font-size: 1.15rem;
 }
 
-.contact-callout span {
+.method-card span {
   color: var(--muted);
+}
+
+.line-card {
+  color: var(--white);
+  border-color: transparent;
+  background: var(--green);
+}
+
+.line-card span {
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .contact-form {
@@ -588,6 +609,10 @@ textarea {
     background: rgba(12, 20, 18, 0.7);
   }
 
+  .hero h1 {
+    font-size: 4rem;
+  }
+
   .split,
   .faq-layout,
   .contact-layout {
@@ -634,7 +659,7 @@ textarea {
   }
 
   .hero h1 {
-    font-size: clamp(2rem, 11vw, 2.85rem);
+    font-size: 2.65rem;
   }
 
   .hero-copy {
