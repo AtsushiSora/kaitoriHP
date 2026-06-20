@@ -1,4 +1,5 @@
 const LINE_OFFICIAL_ACCOUNT_ID = "@774zckii";
+const CONTACT_EMAIL = "sora29128616@gmail.com";
 
 function getFieldValue(form, fieldName) {
   const field = form.elements[fieldName];
@@ -22,6 +23,19 @@ function buildLineMessage(form) {
   return rows.join("\n");
 }
 
+function buildMailSubject() {
+  return "廃車の無料引き取り相談";
+}
+
+function buildMailUrl(message) {
+  const params = new URLSearchParams({
+    subject: buildMailSubject(),
+    body: message,
+  });
+
+  return `mailto:${CONTACT_EMAIL}?${params.toString()}`;
+}
+
 function buildLineUrl(message) {
   const encodedMessage = encodeURIComponent(message);
 
@@ -40,8 +54,17 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
       window.location.href = buildLineUrl(buildLineMessage(contactForm));
     });
+
+    const emailButton = document.querySelector("#email-submit");
+
+    if (emailButton) {
+      emailButton.addEventListener("click", () => {
+        window.location.href = buildMailUrl(buildLineMessage(contactForm));
+      });
+    }
   }
 });
 
 window.buildLineMessage = buildLineMessage;
 window.buildLineUrl = buildLineUrl;
+window.buildMailUrl = buildMailUrl;
