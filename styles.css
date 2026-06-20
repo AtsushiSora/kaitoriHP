@@ -761,12 +761,51 @@ textarea {
 @media (max-width: 940px) {
   .site-header {
     position: absolute;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 8px 12px;
     min-height: 0;
   }
 
+  .brand {
+    min-width: 0;
+  }
+
+  .brand > span:last-child {
+    min-width: 0;
+  }
+
+  .brand strong {
+    white-space: normal;
+  }
+
   .nav {
-    display: none;
+    display: flex;
+    grid-column: 1 / -1;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 4px 14px;
+    width: 100%;
+    font-size: 0.84rem;
+  }
+
+  .nav a {
+    position: relative;
+    padding-left: 12px;
+    color: rgba(255, 255, 255, 0.84);
+    line-height: 1.45;
+  }
+
+  .nav a::before {
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--amber);
+    content: "";
   }
 
   .hero {
@@ -810,7 +849,7 @@ textarea {
   }
 
   .site-header {
-    padding: 12px 14px;
+    padding: 10px 14px 12px;
   }
 
   .brand {
@@ -823,7 +862,7 @@ textarea {
   }
 
   .brand strong {
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     white-space: normal;
   }
 
@@ -833,13 +872,20 @@ textarea {
   }
 
   .header-call {
+    min-height: 36px;
     padding: 0 10px;
-    font-size: 0.86rem;
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+
+  .nav {
+    gap: 3px 12px;
+    font-size: 0.78rem;
   }
 
   .hero {
     min-height: auto;
-    padding: 104px 0 24px;
+    padding: 132px 0 24px;
   }
 
   .hero-media {
