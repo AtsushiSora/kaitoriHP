@@ -685,6 +685,10 @@ textarea {
   margin-top: 18px;
 }
 
+.page-grid + .content-panel {
+  margin-top: 18px;
+}
+
 .content-panel ul,
 .content-panel ol {
   margin: 14px 0 0;
