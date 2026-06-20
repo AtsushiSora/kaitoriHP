@@ -726,16 +726,16 @@ textarea {
 }
 
 .site-footer {
-  padding: 26px 0;
+  padding: 32px 0;
   color: rgba(255, 255, 255, 0.72);
   background: #111816;
 }
 
 .footer-inner {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 18px;
+  gap: 28px;
 }
 
 .footer-inner p {
@@ -747,11 +747,28 @@ textarea {
 }
 
 .footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 10px 16px;
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  gap: 8px 18px;
   font-size: 0.88rem;
+}
+
+.footer-links a {
+  position: relative;
+  padding-left: 14px;
+  color: rgba(255, 255, 255, 0.74);
+  line-height: 1.45;
+}
+
+.footer-links a::before {
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--amber);
+  content: "";
 }
 
 .footer-links a:hover {
@@ -761,51 +778,12 @@ textarea {
 @media (max-width: 940px) {
   .site-header {
     position: absolute;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: center;
-    gap: 8px 12px;
+    align-items: flex-start;
     min-height: 0;
   }
 
-  .brand {
-    min-width: 0;
-  }
-
-  .brand > span:last-child {
-    min-width: 0;
-  }
-
-  .brand strong {
-    white-space: normal;
-  }
-
   .nav {
-    display: flex;
-    grid-column: 1 / -1;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 4px 14px;
-    width: 100%;
-    font-size: 0.84rem;
-  }
-
-  .nav a {
-    position: relative;
-    padding-left: 12px;
-    color: rgba(255, 255, 255, 0.84);
-    line-height: 1.45;
-  }
-
-  .nav a::before {
-    position: absolute;
-    left: 0;
-    top: 0.62em;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: var(--amber);
-    content: "";
+    display: none;
   }
 
   .hero {
@@ -849,7 +827,7 @@ textarea {
   }
 
   .site-header {
-    padding: 10px 14px 12px;
+    padding: 12px 14px;
   }
 
   .brand {
@@ -862,7 +840,7 @@ textarea {
   }
 
   .brand strong {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     white-space: normal;
   }
 
@@ -872,20 +850,13 @@ textarea {
   }
 
   .header-call {
-    min-height: 36px;
     padding: 0 10px;
-    font-size: 0.78rem;
-    white-space: nowrap;
-  }
-
-  .nav {
-    gap: 3px 12px;
-    font-size: 0.78rem;
+    font-size: 0.86rem;
   }
 
   .hero {
     min-height: auto;
-    padding: 132px 0 24px;
+    padding: 104px 0 24px;
   }
 
   .hero-media {
@@ -952,7 +923,8 @@ textarea {
   }
 
   .footer-links {
-    justify-content: flex-start;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 14px;
   }
 
   .data-list div {
