@@ -46,19 +46,44 @@ function buildLineUrl(message) {
   return `https://line.me/R/msg/text/?${encodedMessage}`;
 }
 
+async function submitNetlifyForm(form) {
+  if (!form.dataset.netlify) {
+    return;
+  }
+
+  const formData = new FormData(form);
+
+  if (!formData.get("form-name") && form.name) {
+    formData.set("form-name", form.name);
+  }
+
+  try {
+    await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+      keepalive: true,
+    });
+  } catch (error) {
+    // GitHub PagesではNetlify Formsが動かないため、失敗してもLINE・メール導線を優先します。
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const contactForm = document.querySelector("#contact-form");
 
   if (contactForm) {
-    contactForm.addEventListener("submit", (event) => {
+    contactForm.addEventListener("submit", async (event) => {
       event.preventDefault();
+      await submitNetlifyForm(contactForm);
       window.location.href = buildLineUrl(buildLineMessage(contactForm));
     });
 
     const emailButton = document.querySelector("#email-submit");
 
     if (emailButton) {
-      emailButton.addEventListener("click", () => {
+      emailButton.addEventListener("click", async () => {
+        await submitNetlifyForm(contactForm);
         window.location.href = buildMailUrl(buildLineMessage(contactForm));
       });
     }
@@ -68,3 +93,4 @@ document.addEventListener("DOMContentLoaded", () => {
 window.buildLineMessage = buildLineMessage;
 window.buildLineUrl = buildLineUrl;
 window.buildMailUrl = buildMailUrl;
+window.submitNetlifyForm = submitNetlifyForm;

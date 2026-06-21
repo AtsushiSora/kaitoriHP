@@ -18,10 +18,12 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
+  overflow-x: hidden;
   color: var(--ink);
   background: var(--paper);
   font-family:
@@ -135,6 +137,10 @@ textarea {
   color: var(--white);
   font-weight: 700;
   white-space: nowrap;
+}
+
+.mobile-contact-bar {
+  display: none;
 }
 
 .hero {
@@ -496,6 +502,14 @@ textarea {
   color: rgba(255, 255, 255, 0.78);
 }
 
+.hidden-field {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .contact-form {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -830,6 +844,39 @@ textarea {
     padding: 12px 14px;
   }
 
+  .mobile-contact-bar {
+    position: fixed;
+    z-index: 30;
+    left: 8px;
+    right: 8px;
+    bottom: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    padding: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    background: rgba(17, 24, 22, 0.94);
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.24);
+    backdrop-filter: blur(12px);
+  }
+
+  .mobile-contact-bar a {
+    display: grid;
+    place-items: center;
+    min-height: 42px;
+    border-radius: 6px;
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 0.86rem;
+    font-weight: 900;
+    white-space: nowrap;
+  }
+
+  .mobile-contact-bar a:first-child {
+    background: var(--green);
+  }
+
   .brand {
     gap: 10px;
     min-width: 0;
@@ -850,8 +897,7 @@ textarea {
   }
 
   .header-call {
-    padding: 0 10px;
-    font-size: 0.86rem;
+    display: none;
   }
 
   .hero {
@@ -864,11 +910,21 @@ textarea {
   }
 
   .hero h1 {
-    font-size: 2.65rem;
+    font-size: 2.08rem;
+    overflow-wrap: anywhere;
+    word-break: break-all;
+  }
+
+  .hero h1 span {
+    display: inline;
+    word-break: break-all;
   }
 
   .hero-copy {
     margin-top: 18px;
+    font-size: 0.95rem;
+    overflow-wrap: anywhere;
+    word-break: break-all;
   }
 
   .hero-actions {
@@ -894,6 +950,7 @@ textarea {
   }
 
   .hero-facts div {
+    min-width: 0;
     padding: 10px 8px;
   }
 
@@ -903,6 +960,13 @@ textarea {
 
   .hero-facts dd {
     font-size: 1.04rem;
+    overflow-wrap: anywhere;
+  }
+
+  .notice-grid p {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: break-all;
   }
 
   .section {
@@ -930,5 +994,9 @@ textarea {
   .data-list div {
     grid-template-columns: 1fr;
     gap: 6px;
+  }
+
+  body {
+    padding-bottom: 72px;
   }
 }
