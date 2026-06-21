@@ -139,10 +139,6 @@ textarea {
   white-space: nowrap;
 }
 
-.mobile-contact-bar {
-  display: none;
-}
-
 .hero {
   position: relative;
   display: grid;
@@ -844,39 +840,6 @@ textarea {
     padding: 12px 14px;
   }
 
-  .mobile-contact-bar {
-    position: fixed;
-    z-index: 30;
-    left: 8px;
-    right: 8px;
-    bottom: 10px;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 6px;
-    padding: 7px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 8px;
-    background: rgba(17, 24, 22, 0.94);
-    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.24);
-    backdrop-filter: blur(12px);
-  }
-
-  .mobile-contact-bar a {
-    display: grid;
-    place-items: center;
-    min-height: 42px;
-    border-radius: 6px;
-    color: var(--white);
-    background: rgba(255, 255, 255, 0.1);
-    font-size: 0.86rem;
-    font-weight: 900;
-    white-space: nowrap;
-  }
-
-  .mobile-contact-bar a:first-child {
-    background: var(--green);
-  }
-
   .brand {
     gap: 10px;
     min-width: 0;
@@ -996,7 +959,4 @@ textarea {
     gap: 6px;
   }
 
-  body {
-    padding-bottom: 72px;
-  }
 }
