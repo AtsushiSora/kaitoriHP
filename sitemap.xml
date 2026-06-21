@@ -17,7 +17,7 @@
   </url>
   <url>
     <loc>https://atsushisora.github.io/kaitoriHP/documents.html</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-21</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -295,7 +295,7 @@
   </url>
   <url>
     <loc>https://atsushisora.github.io/kaitoriHP/condition/</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-21</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -314,8 +314,32 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://atsushisora.github.io/kaitoriHP/condition/kagi-nashi.html</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://atsushisora.github.io/kaitoriHP/condition/tire-punk.html</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://atsushisora.github.io/kaitoriHP/condition/houchi.html</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://atsushisora.github.io/kaitoriHP/condition/teinenshiki.html</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://atsushisora.github.io/kaitoriHP/cases/</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-21</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -336,6 +360,24 @@
   <url>
     <loc>https://atsushisora.github.io/kaitoriHP/cases/shunan-parking-shaken-gire.html</loc>
     <lastmod>2026-06-20</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://atsushisora.github.io/kaitoriHP/cases/shimonoseki-fudosha.html</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://atsushisora.github.io/kaitoriHP/cases/iwakuni-houchi.html</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://atsushisora.github.io/kaitoriHP/cases/higashihiroshima-kagi-nashi.html</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
