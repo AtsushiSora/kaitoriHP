@@ -12,6 +12,7 @@ function buildLineMessage(form) {
     "",
     `お名前：${getFieldValue(form, "name") || "未入力"}`,
     `メールアドレス：${getFieldValue(form, "email") || "未入力"}`,
+    `電話番号：${getFieldValue(form, "phone") || "未入力"}`,
     `車種：${getFieldValue(form, "car") || "未入力"}`,
     `年式：${getFieldValue(form, "year") || "未入力"}`,
     `走行距離：${getFieldValue(form, "mileage") || "未入力"}`,
