@@ -567,6 +567,14 @@ textarea {
   font-size: 0.85rem;
 }
 
+.form-note a,
+.content-panel a {
+  color: var(--green-dark);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .page-main {
   padding-top: 76px;
 }
