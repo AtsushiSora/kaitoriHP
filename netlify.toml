@@ -2,8 +2,50 @@
   publish = "."
 
 [[redirects]]
+  from = "/kaitoriHP/*"
+  to = "/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/kaitoriHP"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact"
+  to = "/#contact"
+  status = 302
+
+[[redirects]]
   from = "/thanks"
   to = "/thanks.html"
+  status = 200
+
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 200
+
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+
+[[redirects]]
+  from = "/faq"
+  to = "/faq.html"
+  status = 200
+
+[[redirects]]
+  from = "/documents"
+  to = "/documents.html"
+  status = 200
+
+[[redirects]]
+  from = "/free-pickup"
+  to = "/free-pickup.html"
   status = 200
 
 [[headers]]
@@ -27,4 +69,9 @@
 [[headers]]
   for = "/assets/*"
   [headers.values]
-    Cache-Control = "public, max-age=604800"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
