@@ -156,7 +156,7 @@ textarea {
 }
 
 .hero-media {
-  background-image: url("assets/hero-haisha.png");
+  background-image: url("assets/hero-haisha.jpg");
   background-size: cover;
   background-position: 64% center;
   transform: scale(1.02);
@@ -584,7 +584,7 @@ textarea {
   color: var(--white);
   background:
     linear-gradient(90deg, rgba(15, 42, 35, 0.96), rgba(15, 42, 35, 0.78)),
-    url("assets/hero-haisha.png") center / cover;
+    url("assets/hero-haisha.jpg") center / cover;
 }
 
 .page-hero .eyebrow {
