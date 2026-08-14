@@ -15,7 +15,7 @@
 1. NetlifyでこのGitHubリポジトリを接続する
 2. Build commandは空欄、Publish directoryは `.` にする
 3. Forms機能で `haisha-contact` が検出されているか確認する
-4. Formsの通知先メールを `sora29128616@gmail.com` に設定する
+4. Formsの通知先メールを `info@order-auto.com` に設定する
 5. 公開URLが決まったら各HTMLのcanonical、`index.html` のOG URL、`sitemap.xml`、`robots.txt` のURLを新ドメインへ変更する
 6. 古物商許可のURL届出に使うURLと、Netlify公開URLまたは独自ドメインを一致させる
 7. Netlify公開URLまたは独自ドメインが確定したら、管轄警察署へホームページURLの届出が必要か確認する
@@ -26,7 +26,7 @@
 - Publish directory: `.`
 - Functions directory: 未使用
 - Forms: 有効
-- Form notifications: `sora29128616@gmail.com`
+- Form notifications: `info@order-auto.com`
 - Branch deploy: 最初は `main` のみで問題ありません
 - 独自ドメインを使う場合は、Netlify側でHTTPSが有効になってからSearch Consoleへ登録します
 
@@ -37,7 +37,7 @@
 - Form name: `haisha-contact`
 - Success page: `/thanks`
 - Honeypot field: `bot-field`
-- 通知先メール: `sora29128616@gmail.com`
+- 通知先メール: `info@order-auto.com`
 
 Netlify管理画面で確認すること:
 

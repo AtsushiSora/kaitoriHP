@@ -1,5 +1,5 @@
 const LINE_OFFICIAL_ACCOUNT_ID = "@774zckii";
-const CONTACT_EMAIL = "sora29128616@gmail.com";
+const CONTACT_EMAIL = "info@order-auto.com";
 
 function getFieldValue(form, fieldName) {
   const field = form.elements[fieldName];
