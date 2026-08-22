@@ -9,16 +9,20 @@
 - 存在しないURL用の `404.html` を追加済み
 - 静的アセットは長期キャッシュ、HTMLは再検証するヘッダーを設定済み
 - 古物商許可情報を事業者情報ページと共通フッターに掲載済み
+- 電話相談は未開通のため、公開ページでは「準備中」と表示中
 
 ## 公開前に確認すること
 
-1. NetlifyでこのGitHubリポジトリを接続する
-2. Build commandは空欄、Publish directoryは `.` にする
-3. Forms機能で `haisha-contact` が検出されているか確認する
-4. Formsの通知先メールを `info@order-auto.com` に設定する
-5. 公開URLが決まったら各HTMLのcanonical、`index.html` のOG URL、`sitemap.xml`、`robots.txt` のURLを新ドメインへ変更する
-6. 古物商許可のURL届出に使うURLと、Netlify公開URLまたは独自ドメインを一致させる
-7. Netlify公開URLまたは独自ドメインが確定したら、管轄警察署へホームページURLの届出が必要か確認する
+1. 電話番号が開通していることを実機で確認する
+2. サイト内の「電話相談：準備中（開通後に掲載）」を新しい電話番号に差し替える
+3. 電話リンクを `tel:` 形式で設定し、スマホで発信画面が開くか確認する
+4. NetlifyでこのGitHubリポジトリを接続する
+5. Build commandは空欄、Publish directoryは `.` にする
+6. Forms機能で `haisha-contact` が検出されているか確認する
+7. Formsの通知先メールを `info@order-auto.com` に設定する
+8. 公開URLが決まったら各HTMLのcanonical、`index.html` のOG URL、`sitemap.xml`、`robots.txt` のURLを新ドメインへ変更する
+9. 古物商許可のURL届出に使うURLと、Netlify公開URLまたは独自ドメインを一致させる
+10. Netlify公開URLまたは独自ドメインが確定したら、管轄警察署へホームページURLの届出が必要か確認する
 
 ## Netlifyでの推奨設定
 
@@ -51,6 +55,30 @@ Netlify管理画面で確認すること:
 2. Google Search Consoleに新しいURLと `sitemap.xml` を登録する
 3. LINE、メール、電話の導線を実機で確認する
 4. 古物商URL届出が必要な場合は、管轄警察署で届出を行う
+
+## Google Search Console準備
+
+Netlify公開URLまたは独自ドメインが決まってから実施します。
+
+1. Search Consoleでプロパティを追加する
+2. 独自ドメインを使う場合はドメインプロパティ、Netlify標準URLだけで始める場合はURLプレフィックスを選ぶ
+3. 所有権確認を完了する
+4. `sitemap.xml` を送信する
+5. トップページ、主要エリアページ、無料引き取り案内、FAQ、必要書類ページのURL検査を行う
+6. インデックス登録をリクエストする
+7. 1週間後に検索パフォーマンスとインデックス状況を確認する
+
+優先してURL検査するページ:
+
+- `/`
+- `/free-pickup.html`
+- `/faq.html`
+- `/documents.html`
+- `/area/hiroshima.html`
+- `/area/yamaguchi.html`
+- `/area/hiroshima-city.html`
+- `/area/kure.html`
+- `/area/iwakuni.html`
 
 ## 公開URL決定後に差し替えるもの
 

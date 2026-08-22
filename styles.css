@@ -488,6 +488,15 @@ textarea {
   color: var(--muted);
 }
 
+.method-card-muted {
+  color: var(--muted);
+  background: #f3f5f1;
+}
+
+.method-card-muted strong {
+  color: var(--ink);
+}
+
 .line-card {
   color: var(--white);
   border-color: transparent;
@@ -1124,6 +1133,10 @@ textarea {
 
   .button {
     width: 100%;
+    min-height: 54px;
+    padding-right: 16px;
+    padding-left: 16px;
+    text-align: center;
   }
 
   .service-cta-row {
@@ -1181,15 +1194,34 @@ textarea {
 
   .contact-form {
     grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 20px 16px;
+  }
+
+  .contact-methods {
+    gap: 10px;
+  }
+
+  .method-card {
+    padding: 18px 16px;
   }
 
   .footer-inner {
     display: grid;
   }
 
+  .footer-inner p {
+    font-size: 0.9rem;
+  }
+
   .footer-links {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px 14px;
+  }
+
+  .footer-links a {
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
 
   .data-list div {
