@@ -9,20 +9,19 @@
 - 存在しないURL用の `404.html` を追加済み
 - 静的アセットは長期キャッシュ、HTMLは再検証するヘッダーを設定済み
 - 古物商許可情報を事業者情報ページと共通フッターに掲載済み
-- 電話相談は未開通のため、公開ページでは「準備中」と表示中
+- 電話番号 `070-8996-6421` とスマホ用の電話リンクを公開ページに設定済み
 
 ## 公開前に確認すること
 
-1. 電話番号が開通していることを実機で確認する
-2. サイト内の「電話相談：準備中（開通後に掲載）」を新しい電話番号に差し替える
-3. 電話リンクを `tel:` 形式で設定し、スマホで発信画面が開くか確認する
-4. NetlifyでこのGitHubリポジトリを接続する
-5. Build commandは空欄、Publish directoryは `.` にする
-6. Forms機能で `haisha-contact` が検出されているか確認する
-7. Formsの通知先メールを `info@order-auto.com` に設定する
-8. 公開URLが決まったら各HTMLのcanonical、`index.html` のOG URL、`sitemap.xml`、`robots.txt` のURLを新ドメインへ変更する
-9. 古物商許可のURL届出に使うURLと、Netlify公開URLまたは独自ドメインを一致させる
-10. Netlify公開URLまたは独自ドメインが確定したら、管轄警察署へホームページURLの届出が必要か確認する
+1. `070-8996-6421` が開通していることを実機で確認する
+2. スマホで電話リンクを押し、`070-8996-6421` の発信画面が開くか確認する
+3. NetlifyでこのGitHubリポジトリを接続する
+4. Build commandは空欄、Publish directoryは `.` にする
+5. Forms機能で `haisha-contact` が検出されているか確認する
+6. Formsの通知先メールを `info@order-auto.com` に設定する
+7. 公開URLが決まったら各HTMLのcanonical、`index.html` のOG URL、`sitemap.xml`、`robots.txt` のURLを新ドメインへ変更する
+8. 古物商許可のURL届出に使うURLと、Netlify公開URLまたは独自ドメインを一致させる
+9. Netlify公開URLまたは独自ドメインが確定したら、管轄警察署へホームページURLの届出が必要か確認する
 
 ## Netlifyでの推奨設定
 

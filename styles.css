@@ -488,15 +488,6 @@ textarea {
   color: var(--muted);
 }
 
-.method-card-muted {
-  color: var(--muted);
-  background: #f3f5f1;
-}
-
-.method-card-muted strong {
-  color: var(--ink);
-}
-
 .line-card {
   color: var(--white);
   border-color: transparent;
