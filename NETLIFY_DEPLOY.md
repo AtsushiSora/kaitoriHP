@@ -79,12 +79,14 @@ Netlify公開URLまたは独自ドメインが決まってから実施します�
 - `/area/kure.html`
 - `/area/iwakuni.html`
 
-## 公開URL決定後に差し替えるもの
+## 公開URL
 
-現時点ではGitHub PagesのURLがcanonicalやサイトマップに残っています。Netlifyの本番URLまたは独自ドメインが決まったら、以下を一括置換します。
+Netlifyの本番URLは `https://omakase-haisha.netlify.app` です。以下のSEO関連URLは本番URLへ差し替え済みです。
 
 - 各HTMLの `<link rel="canonical">`
-- `index.html` の `og:url`、`og:image`
+- `index.html` と `free-pickup.html` のOG URL・OG画像
 - `index.html` の構造化データ内 `url`、`image`
 - `sitemap.xml` の `<loc>`
 - `robots.txt` の `Sitemap`
+
+独自ドメインを設定する場合は、同じ項目を新しいドメインへ再度一括変更します。

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://atsushisora.github.io/kaitoriHP/sitemap.xml
+Sitemap: https://omakase-haisha.netlify.app/sitemap.xml
