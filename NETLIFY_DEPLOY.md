@@ -81,7 +81,7 @@ Netlify公開URLまたは独自ドメインが決まってから実施します�
 
 ## 公開URL
 
-Netlifyの本番URLは `https://omakase-haisha.netlify.app` です。以下のSEO関連URLは本番URLへ差し替え済みです。
+Netlifyの本番URLは `https://haisha.order-auto.com` です。以下のSEO関連URLは本番URLへ差し替え済みです。
 
 - 各HTMLの `<link rel="canonical">`
 - `index.html` と `free-pickup.html` のOG URL・OG画像

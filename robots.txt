@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://omakase-haisha.netlify.app/sitemap.xml
+Sitemap: https://haisha.order-auto.com/sitemap.xml
