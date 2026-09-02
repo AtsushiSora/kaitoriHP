@@ -18,7 +18,8 @@
     <meta property="og:url" content="https://haisha.order-auto.com/" />
     <meta property="og:image" content="https://haisha.order-auto.com/assets/hero-haisha.jpg" />
     <link rel="stylesheet" href="styles.css" />
-    <script src="script.js?v=2" defer></script>
+    <script src="site-config.js?v=1" defer></script>
+    <script src="script.js?v=3" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -246,7 +247,7 @@
             <input type="hidden" name="subject" value="廃車の無料引き取り相談" />
             <label>
               お名前
-              <input type="text" name="name" autocomplete="name" placeholder="山田 太郎" />
+              <input type="text" name="name" autocomplete="name" placeholder="山田 太郎" required />
             </label>
             <label>
               メールアドレス
@@ -317,7 +318,7 @@
             </label>
             <label class="full">
               引き取り場所・相談内容
-              <textarea name="message" rows="5" placeholder="広島県・山口県の市区町村、駐車場所、希望日時など"></textarea>
+              <textarea name="message" rows="5" placeholder="広島県・山口県の市区町村、駐車場所、希望日時など" required></textarea>
             </label>
             <div class="form-actions full">
               <button class="button button-primary form-button" type="submit">

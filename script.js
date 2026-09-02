@@ -1,5 +1,8 @@
 const LINE_OFFICIAL_ACCOUNT_ID = "@774zckii";
 const CONTACT_EMAIL = "info@order-auto.com";
+const integrationConfig = window.orderAutoIntegration || {};
+const supabaseUrl = String(integrationConfig.supabaseUrl || "").replace(/\/$/, "");
+const supabasePublishableKey = String(integrationConfig.supabasePublishableKey || "");
 
 function getFieldValue(form, fieldName) {
   const field = form.elements[fieldName];
@@ -69,13 +72,51 @@ async function submitNetlifyForm(form) {
   }
 }
 
+function validateContactForm(form) {
+  const email = form.elements.email;
+  const phone = form.elements.phone;
+  const hasContact = Boolean(email?.value.trim() || phone?.value.trim());
+  if (email) email.setCustomValidity(hasContact ? "" : "メールアドレスまたは電話番号を入力してください。");
+  if (!form.reportValidity()) return false;
+  if (email) email.setCustomValidity("");
+  return true;
+}
+
+async function submitManagementInquiry(form) {
+  if (!supabaseUrl || !supabasePublishableKey) return false;
+  const response = await fetch(`${supabaseUrl}/rest/v1/rpc/submit_website_inquiry`, {
+    method: "POST",
+    headers: {
+      apikey: supabasePublishableKey,
+      Authorization: `Bearer ${supabasePublishableKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      p_source: "scrap_site",
+      p_customer_name: getFieldValue(form, "name"),
+      p_email: getFieldValue(form, "email"),
+      p_phone: getFieldValue(form, "phone"),
+      p_message: buildLineMessage(form),
+      p_interested_vehicle_id: null,
+      p_website: getFieldValue(form, "bot-field"),
+    }),
+  });
+  if (!response.ok) throw new Error("Management inquiry submission failed");
+  return true;
+}
+
+async function recordInquiry(form) {
+  await Promise.allSettled([submitNetlifyForm(form), submitManagementInquiry(form)]);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const contactForm = document.querySelector("#contact-form");
 
   if (contactForm) {
     contactForm.addEventListener("submit", async (event) => {
       event.preventDefault();
-      await submitNetlifyForm(contactForm);
+      if (!validateContactForm(contactForm)) return;
+      await recordInquiry(contactForm);
       window.location.href = buildLineUrl(buildLineMessage(contactForm));
     });
 
@@ -83,7 +124,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (emailButton) {
       emailButton.addEventListener("click", async () => {
-        await submitNetlifyForm(contactForm);
+        if (!validateContactForm(contactForm)) return;
+        await recordInquiry(contactForm);
         window.location.href = buildMailUrl(buildLineMessage(contactForm));
       });
     }
@@ -94,3 +136,4 @@ window.buildLineMessage = buildLineMessage;
 window.buildLineUrl = buildLineUrl;
 window.buildMailUrl = buildMailUrl;
 window.submitNetlifyForm = submitNetlifyForm;
+window.submitManagementInquiry = submitManagementInquiry;

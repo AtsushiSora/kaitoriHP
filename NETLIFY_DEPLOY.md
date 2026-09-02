@@ -35,7 +35,7 @@
 
 ## 問い合わせフォーム
 
-フォームはNetlify Formsに対応済みです。送信時はフォーム内容をNetlifyに記録し、その後LINEまたはメール作成画面へ進みます。
+フォームはNetlify Formsとオーダーオート管理システムに対応済みです。送信時は問い合わせを管理システムにも記録し、その後LINEまたはメール作成画面へ進みます。
 
 - Form name: `haisha-contact`
 - Success page: `/thanks`
