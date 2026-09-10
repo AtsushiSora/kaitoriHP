@@ -11,19 +11,21 @@
       window.dataLayer.push(arguments);
     };
 
-  window.gtag("consent", "default", {
-    ad_storage: "denied",
-    ad_user_data: "denied",
-    ad_personalization: "denied",
-    analytics_storage: "granted",
-  });
-  window.gtag("js", new Date());
-  window.gtag("config", MEASUREMENT_ID);
+  if (!window.orderAutoGtagConfigured) {
+    window.gtag("consent", "default", {
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      analytics_storage: "granted",
+    });
+    window.gtag("js", new Date());
+    window.gtag("config", MEASUREMENT_ID);
 
-  const tag = document.createElement("script");
-  tag.async = true;
-  tag.src = `https://www.googletagmanager.com/gtag/js?id=${MEASUREMENT_ID}`;
-  document.head.appendChild(tag);
+    const tag = document.createElement("script");
+    tag.async = true;
+    tag.src = `https://www.googletagmanager.com/gtag/js?id=${MEASUREMENT_ID}`;
+    document.head.appendChild(tag);
+  }
 
   function track(name, parameters = {}) {
     window.gtag("event", name, parameters);
