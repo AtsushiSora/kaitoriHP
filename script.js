@@ -116,6 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
     contactForm.addEventListener("submit", async (event) => {
       event.preventDefault();
       if (!validateContactForm(contactForm)) return;
+      window.orderAutoAnalytics?.trackLead("line");
       await recordInquiry(contactForm);
       window.location.href = buildLineUrl(buildLineMessage(contactForm));
     });
@@ -125,6 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (emailButton) {
       emailButton.addEventListener("click", async () => {
         if (!validateContactForm(contactForm)) return;
+        window.orderAutoAnalytics?.trackLead("email");
         await recordInquiry(contactForm);
         window.location.href = buildMailUrl(buildLineMessage(contactForm));
       });
